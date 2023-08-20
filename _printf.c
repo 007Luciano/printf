@@ -14,7 +14,6 @@ int _printf(const char *format, ...)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-
 		if (format[i] != '%')
 		{
 			ma_rahctup(format[i]);
@@ -31,20 +30,18 @@ int _printf(const char *format, ...)
 			i++;
 			count += (s_count - 1);
 		}
-		
-		else if(format[i + 1] == '%')
+
+		else if (format[i + 1] == '%')
 		{
 			ma_rahctup('%');
 		}
-		
-		else if(format[i + 1] == 'b')
+
+		else if (format[i + 1] == 'b')
 		{
 			binane(va_arg(args, unsigned int));
 		}
-
 		count += 1;
 	}
 va_end(args);
-
 return (count);
 }
