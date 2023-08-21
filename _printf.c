@@ -16,11 +16,11 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			ma_rahctup(format[i]);
+			putinchar(format[i]);
 		}
 		else if (format[i + 1] == 'c')
 		{
-			ma_rahctup(va_arg(args, int));
+			putinchar(va_arg(args, int));
 			i++;
 		}
 
@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 
 		else if (format[i + 1] == '%')
 		{
-			ma_rahctup('%');
+			putinchar('%');
 		}
 
 		else if (format[i + 1] == 'b')

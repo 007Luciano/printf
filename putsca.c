@@ -7,17 +7,14 @@
  */
 int putsca(char *c)
 {
+int count = 0;
 
-  int count = 0;
-
-  if(c)
-    {
-
-      for (count = 0; c[count] != '\0'; count++)
-	{
-	  ma_rahctup(c[count]);
-	}
-    }
-
-  return (count);
+if (c)
+{
+for (count = 0; c[count] != '\0'; count++)
+{
+putinchar(c[count]);
+}
+}
+return (count);
 }

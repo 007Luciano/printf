@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 unsigned int binane(unsigned int b);
-int ma_rahctup(char c);
+int putinchar(char c);
 int _printf(const char *format, ...);
 int putsca(char *c);
 
