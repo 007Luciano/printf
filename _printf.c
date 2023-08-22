@@ -20,6 +20,7 @@ int _printf(const char *format, ...)
 		{
 			putinchar(format[i]);
 		}
+
 		else if (format[i + 1] == 'c')
 		{
 			putinchar(va_arg(args, int));
@@ -46,12 +47,12 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == 'd')
 		{
-		(*decimal_con)(va_arg(args, int));
+		decimal_con(va_arg(args, int));
 		i++;
 		}
 		else if (format[i + 1] == 'i')
 		{
-		(*decimal_con)(va_arg(args, int));
+		decimal_con(va_arg(args, int));
 		i++;
 		}
 		count += 1;
