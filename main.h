@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+int (*decimal_con(int zd))(int);
 unsigned int binane(unsigned int b);
 int putinchar(char c);
 int _printf(const char *format, ...);
