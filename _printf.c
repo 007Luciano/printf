@@ -4,6 +4,8 @@
  * @format: format specifier
  * Return: no of bytes printed
  */
+int _printf(const char *format, ...);
+
 int _printf(const char *format, ...)
 {
 	unsigned int i, s_count, count = 0;
@@ -41,6 +43,16 @@ int _printf(const char *format, ...)
 		{
 			binane(va_arg(args, unsigned int));
 			i++;
+		}
+		else if (format[i + 1] == 'd')
+		{
+		(*decimal_con)(va_arg(args, int));
+		i++;
+		}
+		else if (format[i + 1] == 'i')
+		{
+		(*decimal_con)(va_arg(args, int));
+		i++;
 		}
 		count += 1;
 	}
