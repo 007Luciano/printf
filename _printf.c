@@ -34,11 +34,13 @@ int _printf(const char *format, ...)
 		else if (format[i + 1] == '%')
 		{
 			putinchar('%');
+			i++;
 		}
 
 		else if (format[i + 1] == 'b')
 		{
 			binane(va_arg(args, unsigned int));
+			i++;
 		}
 		count += 1;
 	}
