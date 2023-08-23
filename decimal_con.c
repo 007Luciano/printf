@@ -42,32 +42,22 @@ int d(int num)
 return (ma_putchar (num, 0));
 }
 
-
 /**
- * i - handles int to hexadecimal and octal conversion
- * @num: int parsed for conversion
- * Return: int conversion through ma_putchar
- **/
-int i(int num)
-{
-return (ma_putchar(num, 0));
-}
-
-
-/**
- * *decimal_con - major function for int to base10 conversion
+ * decimal_con - major function for int to base10 conversion
  * @zd: character specifier between %d and %i
  * Return: address of proper function
  **/
-int (*decimal_con(int zd))(int)
+int decimal_con(int zd)
 {
-if (zd == 'd')
-return (&d);
+return (d(zd));
 
-else if (zd == 'i')
-return (&i);
-
-return (NULL);
+/*
+ * else if (zd == 'i')
+ * return (&i);
+ *
+ * return (NULL);
+ * }
+ **/
 }
 
 
