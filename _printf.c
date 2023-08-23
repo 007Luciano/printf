@@ -8,7 +8,7 @@ int _printf(const char *format, ...);
 
 int _printf(const char *format, ...)
 {
-	unsigned int i, count = 0;
+	unsigned int i, s_count, count = 0;
 
 	va_list args;
 
@@ -29,14 +29,9 @@ int _printf(const char *format, ...)
 
 		else if (format[i + 1] == 's')
 		{
-			char *strin = va_arg(args, char *);
-			while (*strin)
-			{
-				putinchar(*strin);
-				strin++;
-				count++;
-			}
+			s_count = putsca(va_arg(args, char *));
 			i++;
+			count += (s_count - 1);
 		}
 
 		else if (format[i + 1] == '%')
