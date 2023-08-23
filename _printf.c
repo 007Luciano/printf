@@ -19,14 +19,12 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			putinchar(format[i]);
-			count++;
 		}
 
 		else if (format[i + 1] == 'c')
 		{
 			putinchar(va_arg(args, int));
 			i++;
-			count++;
 		}
 
 		else if (format[i + 1] == 's')
@@ -39,14 +37,12 @@ int _printf(const char *format, ...)
 				count++;
 			}
 			i++;
-
 		}
 
 		else if (format[i + 1] == '%')
 		{
 			putinchar('%');
 			i++;
-			count++;
 		}
 
 		else if (format[i + 1] == 'b')
@@ -64,6 +60,7 @@ int _printf(const char *format, ...)
 		decimal_con(va_arg(args, int));
 		i++;
 		}
+		count += 1;
 	}
 va_end(args);
 return (count);
