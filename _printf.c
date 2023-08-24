@@ -8,11 +8,14 @@ int _printf(const char *format, ...);
 
 int _printf(const char *format, ...)
 {
-	unsigned int i, s_count, count = 0;
+unsigned int i, count = 0;
 
 	va_list args;
 
 	va_start(args, format);
+
+	if (format == NULL)
+	return (-1);
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -29,9 +32,33 @@ int _printf(const char *format, ...)
 
 		else if (format[i + 1] == 's')
 		{
-			s_count = putsca(va_arg(args, char *));
-			i++;
-			count += (s_count - 1);
+		char *strin = va_arg(args, char *);
+
+		if (strin == NULL)
+		{
+		char nullStrnull[] = "(null)";
+
+		int z;
+
+		for (z = 0; nullStrnull[z] != '\0'; z++)
+		{
+		putinchar(nullStrnull[z]);
+		count++;
+		}
+		}
+
+		else
+		{
+		int z;
+
+		for (z = 0; strin[z] != '\0'; z++)
+		{
+		putinchar(strin[z]);
+		count++;
+		}
+		}
+
+		i++;
 		}
 
 		else if (format[i + 1] == '%')
