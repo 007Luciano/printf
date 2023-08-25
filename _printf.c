@@ -22,7 +22,6 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			putinchar(format[i]);
-			i++;
 		}
 
 		else if (format[i + 1] == 'c')
