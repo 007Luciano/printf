@@ -8,14 +8,14 @@ int _printf(const char *format, ...);
 
 int _printf(const char *format, ...)
 {
-	unsigned int i, count = 0;
+	unsigned int i, count2, count = 0;
 
 	va_list args;
 
 	va_start(args, format);
 
 	if (format == NULL)
-        return (-1);
+		return (-1);
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 
 		else if (format[i + 1] == 's')
 		{
-		char *strin = va_arg(args, char *);
+		const char *strin = va_arg(args, char *);
 
 		if (strin == NULL)
 		{
@@ -43,21 +43,16 @@ int _printf(const char *format, ...)
 		for (z = 0; nullStrnull[z] != '\0'; z++)
 		{
 		putinchar(nullStrnull[z]);
-		/*count++;*/
+		count++;
 		}
 		}
 
 		else
 		{
-		int z;
-
-		for (z = 0; strin[z] != '\0'; z++)
-		{
-		putinchar(strin[z]);
-		/*count++;*/
+		count2 = putsca(va_arg(args, char *));
+		i++;
+		count += (count2 - 1);
 		}
-		}
-
 		i++;
 		}
 
