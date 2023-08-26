@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+int putsca(char *c);
 int decimal_con(int zd);
 unsigned int binane(unsigned int b);
 int putinchar(char c);
