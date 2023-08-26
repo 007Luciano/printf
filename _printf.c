@@ -32,6 +32,7 @@ i++;
 
 else if (format[i + 1] == 's')
 {
+const char *strin = va_arg(args, char *);
 if (strin == NULL)
 {
 char nullStrnull[] = "(null)";
