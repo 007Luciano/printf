@@ -32,26 +32,10 @@ i++;
 
 else if (format[i + 1] == 's')
 {
-const char *strin = va_arg(args, char *);
-if (strin == NULL)
-{
-char nullStrnull[] = "(null)";
-
-int z;
-
-for (z = 0; nullStrnull[z] != '\0'; z++)
-{
-putinchar(nullStrnull[z]);
-count++;
-}
-}
-
-else
-{
 s_count = putsca(va_arg(args, char *));
 i++;
 count += (s_count - 1);
-}
+
 }
 
 else if (format[i + 1] == '%')
